@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Graphics")(type "KiCad")(uri "C:/Users/user/Documents/KiCad/8.0/footprints/Graphics.pretty")(options "")(descr ""))
+)
