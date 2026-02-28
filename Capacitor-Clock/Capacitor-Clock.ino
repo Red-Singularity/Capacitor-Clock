@@ -5,6 +5,8 @@
 
 #include <LiquidCrystal_I2C.h> // include I2C library
 #include <AccelStepper.h> // using accel stepper library for motor positioning
+#include <DS3231.h> // include library for RTC module
+#include <Wire.h>
 
 #define MotorInterfaceType 4 // defines stepper as a 4 wire
 
@@ -14,11 +16,30 @@ AccelStepper myStepper(MotorInterfaceType, 1, 3, 2, 4);
 
 LiquidCrystal_I2C lcd(0x27,20,2);  // set the LCD address to 0x27 for a 16 chars and 2 line display
 
+DS3231 myRTC; // create instance of the real time clock
+bool century = false;
+bool h12Flag = true;
+bool pmFlag = false;
+byte alarmDay, alarmHour, alarmMinute, alarmSecond, alarmBits;
+bool alarmDy, alarmH12Flag, alarmPmFlag;
+
 const int stepsPerRevolution = 2048;
 
 void setup() {
   // serial setup for debugging
   Serial.begin(115200);
+
+  Wire.begin(); // start I2C interface
+
+  myRTC.setClockMode(h12Flag); // uploads 'true' (1) to bit 6 of register 0x02
+  // set default date to 1/1/2026
+  myRTC.setYear(26); // uploads 26 to register 0x06 for year
+  myRTC.setMonth(1); // uploads 1 to register 0x05 for month
+  myRTC.setDate(1); // uploads 1 to register 0x04 for day
+  //set default time to midnight
+  myRTC.setSecond(0); // uploads 0 to register 0x00
+  myRTC.setMinute(0); // uploads 0 to register 0x01
+  myRTC.setHour(24); // uploads 24 to register 0x02
 
   //stepper setup
   myStepper.setMaxSpeed(1000.0);
@@ -27,7 +48,7 @@ void setup() {
   myStepper.moveTo(2048);
 
   // LCD setup
-  lcd.begin(); // initialize the lcd 
+  lcd.init(); // initialize the lcd 
   // Print a message to the LCD.
   lcd.backlight();
   lcd.setCursor(2,0);
@@ -39,10 +60,21 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  bool CenturyBit; // this bit is required as an input to the month function and cannot be input as a true or false to the function directly
+  int Year = 2000 + myRTC.getYear();
+  int Month = myRTC.getMonth(CenturyBit);
+  int Day = myRTC.getDate();
 
-  displayFormat(); // display the main format tot he display
-  displayDate(11, 6, 2000);
+  int Hour = myRTC.getHour(h12Flag, pmFlag);
+  int Minute = myRTC.getMinute();
+  int Second = myRTC.getSecond();
+
+
+  displayFormat(); // display the main format to the display
+  displayDate(Month, Day, Year);
+  displayTime(Hour, Minute, Second);
+
+  delay(100);
 
 
 

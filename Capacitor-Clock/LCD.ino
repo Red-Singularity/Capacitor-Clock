@@ -12,12 +12,28 @@ void displayFormat(){
   lcd.print("Date:   /  /    ");
 }
 
-void displayTime(int hours, int minutes, int days){
+void displayTime(int hour, int minute, int second){
+  String hour_s = String(hour); // cast integers to strings
+  String minute_s = String(minute);
+  String second_s = String(second);
+
   lcd.setCursor(7,0);
-  lcd.print(hours);
+  lcd.print(hour_s);
   lcd.setCursor(10,0);
-  lcd.print(minutes);
-  lcd.setCursor(13,0);
+  lcd.print(minute_s);
+  lcd.setCursor(13,0); 
+  lcd.print(second_s);
+
+  lcd.setCursor(16,0);
+
+  if(pmFlag == true){
+    lcd.print("PM");
+  }
+
+  else{
+    lcd.print("AM");
+  }
+
 }
 
 void displayAlarm(){
