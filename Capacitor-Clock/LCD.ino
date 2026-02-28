@@ -3,12 +3,13 @@
 
 void displayFormat(){
   lcd.setCursor(0,0);
-  lcd.print("Time:   :  :  ");
+  lcd.print("Time:    :  :      ");
   lcd.setCursor(0,1);
-  lcd.print("Alarm:   :  :  ");
-  lcd.setCursor(0,1);
+  lcd.print("Alarm:   :  :      ");
+  lcd.setCursor(0,2);
+  lcd.print("Left:    Spent:   ");
+  lcd.setCursor(20,1);
   lcd.print("Date:   /  /    ");
-  )
 }
 
 void displayTime(int hours, int minutes, int days){
@@ -28,10 +29,11 @@ void displayDate(int month, int day, int year){
   String day_s = String(day);
   String year_s = String(year);
 
-  lcd.setCursor(6,1);
+  // due to the display being strange the 4th row is an extension of the 2nd starting at 20
+  lcd.setCursor(26,1);
   lcd.print(month_s);
-  lcd.setCursor(9,1);
+  lcd.setCursor(29,1);
   lcd.print(day_s);
-  lcd.setCursor(12,1);
+  lcd.setCursor(32,1);
   lcd.print(year_s);
 }

@@ -31,9 +31,9 @@ void setup() {
   // Print a message to the LCD.
   lcd.backlight();
   lcd.setCursor(2,0);
-  lcd.print("Cap Clock V1");
+  lcd.print(" Cap Clock V1");
   lcd.setCursor(0,1);
-  lcd.print("By Mal & Dustin");
+  lcd.print("  By Mal & Dustin");
   delay(2000);
 
 }
