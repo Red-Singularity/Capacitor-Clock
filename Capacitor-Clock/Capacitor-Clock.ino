@@ -27,7 +27,7 @@ void setup() {
   myStepper.moveTo(2048);
 
   // LCD setup
-  lcd.init(); // initialize the lcd 
+  lcd.begin(); // initialize the lcd 
   // Print a message to the LCD.
   lcd.backlight();
   lcd.setCursor(2,0);
