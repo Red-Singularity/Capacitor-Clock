@@ -2053,6 +2053,113 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MicroControllers:ESP32-DEVKIT-V1-30PIN"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4019,7 +4126,7 @@
 	)
 	(text "Expected current range of ~10A"
 		(exclude_from_sim no)
-		(at 153.416 150.368 0)
+		(at 161.036 150.368 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4050,7 +4157,7 @@
 	)
 	(text "Capacitor Output"
 		(exclude_from_sim no)
-		(at 152.4 134.366 0)
+		(at 160.02 134.366 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4070,7 +4177,7 @@
 	)
 	(text "Resistor sized to handle 2A constantly"
 		(exclude_from_sim no)
-		(at 156.718 152.908 0)
+		(at 164.338 152.908 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4308,7 +4415,7 @@
 		(uuid "7cf3c15b-45ff-4964-bd60-734ab644c4e2")
 	)
 	(junction
-		(at 129.54 137.16)
+		(at 137.16 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7d4453f9-fd50-471f-96a2-3f3fe16f3a9b")
@@ -4422,7 +4529,7 @@
 		(uuid "d215f11b-9d51-4c9e-8195-7406178ac086")
 	)
 	(junction
-		(at 146.05 139.7)
+		(at 153.67 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d5ac747c-f496-4922-9722-6ce85a407236")
@@ -4450,6 +4557,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e60db884-0c50-49b7-b386-3fe97d273de3")
+	)
+	(junction
+		(at 129.54 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e7ea2ab9-1d2d-4731-90cc-c7fe4c97c7f6")
 	)
 	(junction
 		(at 91.44 137.16)
@@ -4514,6 +4627,16 @@
 			(type default)
 		)
 		(uuid "005548d7-78bb-49d9-8e91-02313fa39f52")
+	)
+	(wire
+		(pts
+			(xy 129.54 137.16) (xy 129.54 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00c32cb5-52d7-4b02-bc0e-1a2925849352")
 	)
 	(wire
 		(pts
@@ -4587,6 +4710,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 146.05) (xy 129.54 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0dd555b0-e005-4cf5-9107-27e42abed5ae")
+	)
+	(wire
+		(pts
 			(xy 168.91 73.66) (xy 167.64 73.66)
 		)
 		(stroke
@@ -4647,6 +4780,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 125.73) (xy 182.88 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "166cc225-573f-4b85-bb53-f94f58e1f1ee")
+	)
+	(wire
+		(pts
 			(xy 125.73 53.34) (xy 142.24 53.34)
 		)
 		(stroke
@@ -4674,6 +4817,16 @@
 			(type default)
 		)
 		(uuid "1d92525a-8e4b-4af4-a938-d9bb6b69c55b")
+	)
+	(wire
+		(pts
+			(xy 182.88 125.73) (xy 182.88 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fc9aeb8-6539-4102-b25a-d7259cd0f966")
 	)
 	(wire
 		(pts
@@ -4727,7 +4880,17 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 139.7) (xy 146.05 139.7)
+			(xy 135.89 22.86) (xy 135.89 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "281bab49-d34b-4f15-80dc-696e7273be4f")
+	)
+	(wire
+		(pts
+			(xy 152.4 139.7) (xy 153.67 139.7)
 		)
 		(stroke
 			(width 0)
@@ -4767,6 +4930,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 22.86) (xy 120.65 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bd10bb7-ab9a-46b3-b880-bd984f01c117")
+	)
+	(wire
+		(pts
 			(xy 247.65 96.52) (xy 247.65 97.79)
 		)
 		(stroke
@@ -4787,13 +4960,23 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 148.59) (xy 129.54 146.05)
+			(xy 137.16 148.59) (xy 137.16 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2f4acdb8-8ecd-49e4-a63f-06095705a1ad")
+	)
+	(wire
+		(pts
+			(xy 119.38 43.18) (xy 142.24 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "309d48d5-da99-4ecc-8d23-08c29fa38814")
 	)
 	(wire
 		(pts
@@ -4817,7 +5000,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 146.05) (xy 130.81 146.05)
+			(xy 137.16 146.05) (xy 138.43 146.05)
 		)
 		(stroke
 			(width 0)
@@ -4904,6 +5087,16 @@
 			(type default)
 		)
 		(uuid "3be8f0e8-0d7e-4f27-8f30-d7e59248a272")
+	)
+	(wire
+		(pts
+			(xy 128.27 22.86) (xy 128.27 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fd0b3c0-ef38-4bfb-91c2-3a98cc9146f4")
 	)
 	(wire
 		(pts
@@ -4997,7 +5190,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 140.97) (xy 129.54 139.7)
+			(xy 137.16 140.97) (xy 137.16 139.7)
 		)
 		(stroke
 			(width 0)
@@ -5127,16 +5320,6 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 71.12) (xy 182.88 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b20e343-042d-4270-9883-0b1b3b614f40")
-	)
-	(wire
-		(pts
 			(xy 68.58 147.32) (xy 68.58 137.16)
 		)
 		(stroke
@@ -5174,6 +5357,16 @@
 			(type default)
 		)
 		(uuid "5ed4bfb9-194b-4784-aaea-734dc5bd42ac")
+	)
+	(wire
+		(pts
+			(xy 113.03 22.86) (xy 113.03 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f6b2e13-c4de-45e7-bde8-038ee262182b")
 	)
 	(wire
 		(pts
@@ -5277,7 +5470,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 129.54) (xy 129.54 137.16)
+			(xy 137.16 129.54) (xy 137.16 137.16)
 		)
 		(stroke
 			(width 0)
@@ -5427,6 +5620,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 137.16) (xy 137.16 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75703d31-c4a1-43d3-9e7c-08e00679ed17")
+	)
+	(wire
+		(pts
 			(xy 60.96 66.04) (xy 71.12 66.04)
 		)
 		(stroke
@@ -5497,7 +5700,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 139.7) (xy 147.32 139.7)
+			(xy 153.67 139.7) (xy 154.94 139.7)
 		)
 		(stroke
 			(width 0)
@@ -5594,6 +5797,16 @@
 			(type default)
 		)
 		(uuid "870a6111-48bb-48bd-83fc-1afa4948062c")
+	)
+	(wire
+		(pts
+			(xy 119.38 43.18) (xy 119.38 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8886818f-e97b-4c12-a22b-45392391c596")
 	)
 	(wire
 		(pts
@@ -6087,7 +6300,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 139.7) (xy 146.05 144.78)
+			(xy 153.67 139.7) (xy 153.67 144.78)
 		)
 		(stroke
 			(width 0)
@@ -6187,7 +6400,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 144.78) (xy 182.88 144.78)
+			(xy 153.67 144.78) (xy 182.88 144.78)
 		)
 		(stroke
 			(width 0)
@@ -6267,7 +6480,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 137.16) (xy 147.32 137.16)
+			(xy 137.16 137.16) (xy 154.94 137.16)
 		)
 		(stroke
 			(width 0)
@@ -6467,7 +6680,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 139.7) (xy 137.16 139.7)
+			(xy 137.16 139.7) (xy 144.78 139.7)
 		)
 		(stroke
 			(width 0)
@@ -6597,7 +6810,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 129.54) (xy 130.81 129.54)
+			(xy 137.16 129.54) (xy 138.43 129.54)
 		)
 		(stroke
 			(width 0)
@@ -6615,16 +6828,6 @@
 		)
 		(uuid "fdd96075-11a4-492b-95e7-ee8d3adadc92")
 	)
-	(wire
-		(pts
-			(xy 167.64 71.12) (xy 182.88 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff61b1a5-fdf8-4108-8c9e-4dacd6d1c808")
-	)
 	(label "Button2"
 		(at 176.53 55.88 0)
 		(effects
@@ -6636,7 +6839,7 @@
 		(uuid "13508856-a055-45ac-9d1f-fb392bf186b4")
 	)
 	(label "I_sense"
-		(at 151.13 144.78 0)
+		(at 158.75 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6676,7 +6879,7 @@
 		(uuid "3a41d7b1-d478-4d3d-a74b-0aa0fcad144c")
 	)
 	(label "I_sense"
-		(at 176.53 71.12 0)
+		(at 133.35 43.18 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6943,7 +7146,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0142e68e-3f9c-4e96-99d6-467c764e3ae0")
-		(property "Reference" "C14"
+		(property "Reference" "C19"
 			(at 106.68 139.954 0)
 			(effects
 				(font
@@ -6997,7 +7200,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C14")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -7012,7 +7215,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0388e2ac-0c24-41e2-b1f2-967306f814f2")
-		(property "Reference" "C20"
+		(property "Reference" "C10"
 			(at 91.44 73.66 0)
 			(effects
 				(font
@@ -7064,7 +7267,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C20")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -7147,7 +7350,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "07ba56cb-ff90-495b-952d-4db2b3988943")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR019"
 			(at 247.65 100.33 0)
 			(effects
 				(font
@@ -7197,7 +7400,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR031")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -7213,7 +7416,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "08f1bc12-6461-4dda-869b-de18a3e93b32")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR011"
 			(at 246.38 77.47 0)
 			(effects
 				(font
@@ -7263,7 +7466,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR032")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -7271,15 +7474,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 129.54 140.97 0)
+		(at 137.16 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "0ab844a9-c253-458d-aac1-01de04b55b71")
-		(property "Reference" "#PWR020"
-			(at 129.54 147.32 0)
+		(property "Reference" "#PWR028"
+			(at 137.16 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7288,7 +7491,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 133.35 142.24 0)
+			(at 140.97 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7296,7 +7499,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 140.97 0)
+			(at 137.16 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7305,7 +7508,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 140.97 0)
+			(at 137.16 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7314,7 +7517,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 129.54 140.97 0)
+			(at 137.16 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7328,7 +7531,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR020")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -7344,7 +7547,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b528ab8-8065-4095-929d-79f2d4c6fde5")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR04"
 			(at 83.82 43.18 0)
 			(effects
 				(font
@@ -7394,7 +7597,7 @@
 		(instances
 			(project ""
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR01")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -7410,7 +7613,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "13b73206-ba63-4043-902a-3a96d04d1572")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR025"
 			(at 248.92 127 0)
 			(effects
 				(font
@@ -7460,7 +7663,73 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR040")
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 113.03 24.13 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1a1c7ca9-aa7e-4182-b4da-b634e7103cc0")
+		(property "Reference" "#PWR042"
+			(at 113.03 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 113.03 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 113.03 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 113.03 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "68efd3ba-ea99-433d-8272-4daf6ea73559")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -7475,7 +7744,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1bade4ad-8a71-4625-a9db-696b9655afb1")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR013"
 			(at 50.8 85.09 0)
 			(effects
 				(font
@@ -7525,7 +7794,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR023")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -7540,7 +7809,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1e32728b-bdc7-457c-b2a7-59c81bb326a8")
-		(property "Reference" "R9"
+		(property "Reference" "R1"
 			(at 235.966 44.196 0)
 			(effects
 				(font
@@ -7594,7 +7863,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "R9")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -7609,7 +7878,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "25faef7e-93fa-43a3-a8ec-544b31303ef5")
-		(property "Reference" "C17"
+		(property "Reference" "C15"
 			(at 85.09 113.03 0)
 			(effects
 				(font
@@ -7661,7 +7930,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C17")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -7677,7 +7946,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28b0a983-84bc-413a-b5e9-d0f635293a67")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR05"
 			(at 170.18 40.64 0)
 			(effects
 				(font
@@ -7727,7 +7996,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR03")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -7743,7 +8012,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "29e7cff6-0e16-45de-8ac5-9e9823f9b855")
-		(property "Reference" "J4"
+		(property "Reference" "J5"
 			(at 257.81 78.7399 0)
 			(effects
 				(font
@@ -7806,7 +8075,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "J4")
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -7821,7 +8090,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2b7656dd-7c22-432c-8a1e-94edd838a228")
-		(property "Reference" "C10"
+		(property "Reference" "C22"
 			(at 31.496 155.194 0)
 			(effects
 				(font
@@ -7873,7 +8142,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C10")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -7951,7 +8220,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 152.4 137.16 0)
+		(at 160.02 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7960,7 +8229,7 @@
 		(fields_autoplaced yes)
 		(uuid "2ebeed22-4e59-425e-883f-32ee4f532e4c")
 		(property "Reference" "J8"
-			(at 154.94 137.1599 0)
+			(at 162.56 137.1599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7969,7 +8238,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 154.94 139.6999 0)
+			(at 162.56 139.6999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7977,8 +8246,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 152.4 137.16 0)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
+			(at 160.02 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7987,7 +8256,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 152.4 137.16 0)
+			(at 160.02 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7996,7 +8265,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 152.4 137.16 0)
+			(at 160.02 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8028,7 +8297,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "33f7599a-fb8a-41d7-83d5-d1279c07d2d7")
-		(property "Reference" "R6"
+		(property "Reference" "R9"
 			(at 84.836 156.21 0)
 			(effects
 				(font
@@ -8082,7 +8351,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "R6")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -8097,7 +8366,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "373f5db0-9c6f-42ae-9492-80a45839dd96")
-		(property "Reference" "R4"
+		(property "Reference" "R6"
 			(at 71.628 147.828 90)
 			(effects
 				(font
@@ -8151,7 +8420,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "R4")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -8166,7 +8435,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3b4828cb-4f78-48ba-b617-5908e81e5489")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR06"
 			(at 234.95 44.45 0)
 			(effects
 				(font
@@ -8216,7 +8485,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR036")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -8232,7 +8501,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3b94a895-7e2e-488c-834a-03cfb729b313")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR015"
 			(at 168.91 86.36 0)
 			(effects
 				(font
@@ -8282,7 +8551,73 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR05")
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 128.27 24.13 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4075d86b-1ca9-48f4-81dc-f7b4bc225f84")
+		(property "Reference" "#PWR044"
+			(at 128.27 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 128.27 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.27 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.27 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 128.27 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "76092c40-3124-4bc7-a329-a7b3caeeba4d")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -8297,7 +8632,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "42381871-76e4-44ae-947f-c17537c46f35")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR035"
 			(at 21.59 168.91 0)
 			(effects
 				(font
@@ -8347,7 +8682,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR09")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -8363,7 +8698,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "45f7e5af-6b35-48df-9949-ebd3eac8ffce")
-		(property "Reference" "U4"
+		(property "Reference" "U1"
 			(at 50.8 58.42 0)
 			(effects
 				(font
@@ -8427,7 +8762,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "U4")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -8442,7 +8777,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "46457ca5-bbf4-4d60-ac99-ab38fabf9f53")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR026"
 			(at 250.19 140.97 0)
 			(effects
 				(font
@@ -8492,7 +8827,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR039")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -8507,7 +8842,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "481fae6a-6500-498f-b023-813c68e981a3")
-		(property "Reference" "C6"
+		(property "Reference" "C7"
 			(at 72.39 73.66 0)
 			(effects
 				(font
@@ -8559,7 +8894,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C6")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -8574,7 +8909,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "48e98a50-ef0e-46dd-bb92-40d2d1fabcac")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR036"
 			(at 29.21 168.91 0)
 			(effects
 				(font
@@ -8624,7 +8959,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR011")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -8639,7 +8974,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4ba93a77-3012-4ca4-abc1-27d7b35065f0")
-		(property "Reference" "C11"
+		(property "Reference" "C17"
 			(at 91.44 139.954 0)
 			(effects
 				(font
@@ -8693,7 +9028,75 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C11")
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 113.03 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4c9a1558-72bb-4ac9-a939-94c3fae4ec40")
+		(property "Reference" "H1"
+			(at 115.57 19.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 115.57 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
+			(at 113.03 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 113.03 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 113.03 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7d404538-2b15-48ac-b1ab-6b7c3f1f8790")
+		)
+		(instances
+			(project ""
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -8708,7 +9111,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4db68dfd-ca34-42da-a51b-678d30cccdf3")
-		(property "Reference" "C19"
+		(property "Reference" "C9"
 			(at 85.09 73.66 0)
 			(effects
 				(font
@@ -8760,7 +9163,76 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C19")
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_US")
+		(at 129.54 142.24 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4eeac397-e931-46ef-84fc-f259ccfcd147")
+		(property "Reference" "C24"
+			(at 129.54 139.954 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "33uF"
+			(at 129.54 145.034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_Tantal_D5.0mm_P2.50mm"
+			(at 129.54 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "capacitor, US symbol"
+			(at 129.54 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cb14dff6-aad1-4ec0-a3c8-3c57f52ec9e4")
+		)
+		(pin "1"
+			(uuid "b25c1612-5a72-45a2-aec4-5fd85d0f4e48")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "C24")
 					(unit 1)
 				)
 			)
@@ -8775,7 +9247,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4f5cccf9-8c40-4519-b0d1-ec73beba3e40")
-		(property "Reference" "C5"
+		(property "Reference" "C11"
 			(at 68.58 106.68 90)
 			(effects
 				(font
@@ -8827,7 +9299,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C5")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -8928,7 +9400,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "58ac8c8f-9ce6-40d4-aef2-f7586da33289")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR032"
 			(at 114.3 153.67 0)
 			(effects
 				(font
@@ -8978,7 +9450,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR017")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -8986,7 +9458,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 130.81 129.54 270)
+		(at 138.43 129.54 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8995,7 +9467,7 @@
 		(fields_autoplaced yes)
 		(uuid "5a638b99-1430-4533-a4a1-d58d4cc93951")
 		(property "Reference" "TP3"
-			(at 135.89 128.2699 90)
+			(at 143.51 128.2699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9004,7 +9476,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 135.89 130.8099 90)
+			(at 143.51 130.8099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9013,7 +9485,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 130.81 134.62 0)
+			(at 138.43 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9022,7 +9494,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 130.81 134.62 0)
+			(at 138.43 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9031,7 +9503,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 130.81 129.54 0)
+			(at 138.43 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9052,6 +9524,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 135.89 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5d169a75-554b-46e9-b020-bcc37aab5ef7")
+		(property "Reference" "H4"
+			(at 138.43 19.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 138.43 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
+			(at 135.89 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 135.89 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 135.89 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f643cd2c-141d-4393-aba4-4ae6db72bfbc")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 74.93 82.55 0)
 		(unit 1)
@@ -9060,7 +9600,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5ec54cb0-f953-4d6d-854f-f760c43e1de3")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR016"
 			(at 74.93 88.9 0)
 			(effects
 				(font
@@ -9110,7 +9650,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR025")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -9125,7 +9665,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60294335-a482-417c-a829-7f918e6ff88b")
-		(property "Reference" "R1"
+		(property "Reference" "R4"
 			(at 22.606 140.716 0)
 			(effects
 				(font
@@ -9179,7 +9719,7 @@
 		(instances
 			(project ""
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "R1")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -9305,7 +9845,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6c795e11-7807-4046-82b3-4a1180c6c5c9")
-		(property "Reference" "C9"
+		(property "Reference" "C14"
 			(at 78.74 113.03 0)
 			(effects
 				(font
@@ -9357,7 +9897,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C9")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -9372,7 +9912,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6daab8ec-06d6-4d50-a97a-8d679670e360")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR039"
 			(at 76.2 168.91 0)
 			(effects
 				(font
@@ -9422,7 +9962,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR013")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -9430,15 +9970,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 129.54 148.59 0)
+		(at 137.16 148.59 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "6f257234-08c2-4a06-bb2b-9e646bd1b503")
-		(property "Reference" "#PWR021"
-			(at 129.54 154.94 0)
+		(property "Reference" "#PWR034"
+			(at 137.16 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9447,7 +9987,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 133.35 149.86 0)
+			(at 140.97 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9455,7 +9995,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 148.59 0)
+			(at 137.16 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9464,7 +10004,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 148.59 0)
+			(at 137.16 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9473,7 +10013,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 129.54 148.59 0)
+			(at 137.16 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9487,7 +10027,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR021")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -9568,7 +10108,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "75d1fc9f-09f2-4836-bca2-3e41f0a1d4b8")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR017"
 			(at 247.65 92.71 0)
 			(effects
 				(font
@@ -9618,7 +10158,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR033")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -9633,7 +10173,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "77931228-29c8-410b-9d8a-264538cbd9ea")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR08"
 			(at 247.65 44.45 0)
 			(effects
 				(font
@@ -9683,7 +10223,206 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR034")
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 120.65 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7dd04478-2e05-4ac3-a0f4-87516c843a99")
+		(property "Reference" "H2"
+			(at 123.19 19.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 123.19 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
+			(at 120.65 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 120.65 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7c315fec-3265-48a0-b21d-5ae12f12de14")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 129.54 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7fa5d33f-e284-4eb2-b367-c33ba289908c")
+		(property "Reference" "#PWR041"
+			(at 129.54 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 133.35 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 129.54 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ec0803e4-32a8-447c-a611-997666f561fc")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 120.65 24.13 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "823aa2fa-4593-4441-9ce3-ff09e23b090b")
+		(property "Reference" "#PWR043"
+			(at 120.65 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 120.65 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 120.65 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 120.65 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "63ed545e-2772-481f-8981-de466771e1ea")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -9698,7 +10437,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8576c832-4289-485c-b6be-21335436a103")
-		(property "Reference" "C15"
+		(property "Reference" "C20"
 			(at 114.3 139.954 0)
 			(effects
 				(font
@@ -9752,7 +10491,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C15")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -9767,7 +10506,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8faaf9c8-16ef-4088-80e5-699706d99b04")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR029"
 			(at 91.44 153.67 0)
 			(effects
 				(font
@@ -9817,7 +10556,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR012")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -9832,7 +10571,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "94de97f5-272a-4c7a-9f77-bed1ceaf7664")
-		(property "Reference" "R8"
+		(property "Reference" "R2"
 			(at 242.316 54.356 0)
 			(effects
 				(font
@@ -9886,7 +10625,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "R8")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -9972,7 +10711,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9afb9af6-297c-44d0-b289-ef24149621ea")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR010"
 			(at 93.98 68.58 0)
 			(effects
 				(font
@@ -10022,7 +10761,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR028")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -10037,7 +10776,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9b6e9e41-b26b-48ea-951b-ed5b9baaffb8")
-		(property "Reference" "C13"
+		(property "Reference" "C18"
 			(at 99.06 139.954 0)
 			(effects
 				(font
@@ -10091,7 +10830,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C13")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -10107,7 +10846,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9fdb6eab-1d64-47a1-8031-be63cd4eaf23")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR020"
 			(at 93.98 107.95 0)
 			(effects
 				(font
@@ -10157,7 +10896,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR029")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -10173,7 +10912,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a6cb153f-4458-4cd2-9d38-08978c6b3ba2")
-		(property "Reference" "J2"
+		(property "Reference" "J1"
 			(at 257.81 24.1299 0)
 			(effects
 				(font
@@ -10233,7 +10972,7 @@
 		(instances
 			(project ""
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "J2")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -10385,7 +11124,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b0e67f3f-9a45-40ea-ae97-25d53c05ae45")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR038"
 			(at 44.45 168.91 0)
 			(effects
 				(font
@@ -10435,7 +11174,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR08")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -10451,7 +11190,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b15b1652-a2c6-40b5-bf67-e4a813ee660b")
-		(property "Reference" "U5"
+		(property "Reference" "U4"
 			(at 50.8 97.79 0)
 			(effects
 				(font
@@ -10515,7 +11254,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "U5")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -10530,7 +11269,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b69bee36-2d09-41c2-92a3-5f46855eb55e")
-		(property "Reference" "U1"
+		(property "Reference" "U2"
 			(at 145.796 80.264 0)
 			(effects
 				(font
@@ -10666,7 +11405,7 @@
 		(instances
 			(project ""
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "U1")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -10750,7 +11489,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b7132ed2-2f14-4740-a2c3-f7470296abd7")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR023"
 			(at 74.93 128.27 0)
 			(effects
 				(font
@@ -10800,7 +11539,75 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR026")
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 128.27 20.32 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ba763d3d-fa33-4926-a434-325a88f08fc2")
+		(property "Reference" "H3"
+			(at 125.73 19.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 125.73 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965_Pad"
+			(at 128.27 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 128.27 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 128.27 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "94044df7-ac00-4654-973c-ab117f983b0b")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -10815,7 +11622,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bb8e6305-37fa-4f37-8611-5d5753d7a7e4")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR030"
 			(at 99.06 153.67 0)
 			(effects
 				(font
@@ -10865,7 +11672,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR015")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -10947,7 +11754,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c0646dfa-911e-400f-9492-d5dcc6d525c0")
-		(property "Reference" "C7"
+		(property "Reference" "C13"
 			(at 72.39 113.03 0)
 			(effects
 				(font
@@ -10999,7 +11806,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C7")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -11014,7 +11821,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c0fee1f1-f700-4ef2-b55c-8b0c0abb0d40")
-		(property "Reference" "C16"
+		(property "Reference" "C21"
 			(at 121.92 139.954 0)
 			(effects
 				(font
@@ -11068,7 +11875,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C16")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -11085,7 +11892,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c1544a59-d2dc-424b-a9b5-69b46c20644a")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR01"
 			(at 248.92 24.13 0)
 			(effects
 				(font
@@ -11135,7 +11942,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR038")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -11150,7 +11957,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c5127197-bc1a-40e4-a16e-af583ddc0e39")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR07"
 			(at 241.3 44.45 0)
 			(effects
 				(font
@@ -11200,7 +12007,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR035")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -11231,7 +12038,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SnapEDA Library:IND_SRR4818A-150M"
+		(property "Footprint" "SRR4818A-3R3Y:IND_SRR4818A-3R3Y"
 			(at 76.2 105.41 0)
 			(effects
 				(font
@@ -11282,7 +12089,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c86d1583-2112-4d04-87e0-01046fd7815d")
-		(property "Reference" "C7"
+		(property "Reference" "C12"
 			(at 29.21 107.95 90)
 			(effects
 				(font
@@ -11334,7 +12141,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C7")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -11350,7 +12157,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cd335398-7f59-444c-a2a8-4aa547658696")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR027"
 			(at 21.59 139.7 0)
 			(effects
 				(font
@@ -11400,7 +12207,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR04")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -11414,9 +12221,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ce59cb85-d3aa-4453-b126-fddf4359dba6")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR024"
 			(at 154.94 128.27 0)
 			(effects
 				(font
@@ -11426,7 +12232,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 154.94 127 0)
+			(at 159.004 123.444 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11466,7 +12272,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR027")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -11548,7 +12354,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d34531f7-d495-4a76-a49a-f2219e9702f6")
-		(property "Reference" "U2"
+		(property "Reference" "U5"
 			(at 49.53 142.494 0)
 			(effects
 				(font
@@ -11618,7 +12424,7 @@
 		(instances
 			(project ""
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "U2")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -11633,7 +12439,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d556d274-7a5f-44c5-bc77-3ded03dc34e0")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR022"
 			(at 50.8 124.46 0)
 			(effects
 				(font
@@ -11683,7 +12489,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR024")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -11698,7 +12504,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d64a1d86-e717-4630-b10f-7c49210fb5de")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR03"
 			(at 248.92 36.83 0)
 			(effects
 				(font
@@ -11748,7 +12554,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR037")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -11756,15 +12562,15 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 140.97 139.7 90)
+		(at 148.59 139.7 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "d68ba185-2dd1-4978-a73f-bf475750a459")
-		(property "Reference" "R7"
-			(at 142.24 139.7 90)
+		(property "Reference" "R3"
+			(at 149.86 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11773,7 +12579,7 @@
 			)
 		)
 		(property "Value" "100m"
-			(at 143.764 141.986 90)
+			(at 151.384 141.986 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11781,8 +12587,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_Shunt_Vishay_WSK2512_6332Metric_T1.19mm"
-			(at 140.97 141.478 90)
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+			(at 148.59 141.478 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11791,7 +12597,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 140.97 139.7 0)
+			(at 148.59 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11800,7 +12606,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 140.97 139.7 0)
+			(at 148.59 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11817,7 +12623,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "R7")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -11832,7 +12638,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d9306e9c-541d-4c1b-8627-d32b9c942ed6")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR040"
 			(at 83.82 168.91 0)
 			(effects
 				(font
@@ -11882,7 +12688,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR014")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -11966,7 +12772,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd510575-d967-4d62-85e2-6e14bba22e9a")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR014"
 			(at 140.97 86.36 0)
 			(effects
 				(font
@@ -12016,7 +12822,73 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR06")
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 135.89 24.13 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "df5fa8aa-8c04-45e1-a3ee-21ab74ebd75c")
+		(property "Reference" "#PWR045"
+			(at 135.89 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 135.89 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.89 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 135.89 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f6e83358-b636-4d37-978d-53a2f7f619ff")
+		)
+		(instances
+			(project "Capacitor-Clock-PCB"
+				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -12032,7 +12904,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e191e302-5ec1-4c9e-8ca6-3ea11ac20d2e")
-		(property "Reference" "J5"
+		(property "Reference" "J4"
 			(at 257.81 58.4199 0)
 			(effects
 				(font
@@ -12086,7 +12958,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "J5")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -12101,7 +12973,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e36d738e-12ed-480c-ac68-8af44c42ccfb")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR012"
 			(at 26.67 82.55 0)
 			(effects
 				(font
@@ -12151,7 +13023,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR019")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -12182,7 +13054,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SnapEDA Library:IND_SRR4818A-150M"
+		(property "Footprint" "SRR4818A-3R3Y:IND_SRR4818A-3R3Y"
 			(at 76.2 66.04 0)
 			(effects
 				(font
@@ -12310,7 +13182,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8a4f164-6401-4415-b1ba-7186959f1769")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR09"
 			(at 26.67 67.31 0)
 			(effects
 				(font
@@ -12360,7 +13232,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR07")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -12368,7 +13240,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 130.81 146.05 270)
+		(at 138.43 146.05 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12377,7 +13249,7 @@
 		(fields_autoplaced yes)
 		(uuid "ea8a8389-da27-45bd-8062-2406c29ce857")
 		(property "Reference" "TP4"
-			(at 135.89 144.7799 90)
+			(at 143.51 144.7799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12386,7 +13258,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 135.89 147.3199 90)
+			(at 143.51 147.3199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12395,7 +13267,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 130.81 151.13 0)
+			(at 138.43 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12404,7 +13276,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 130.81 151.13 0)
+			(at 138.43 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12413,7 +13285,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 130.81 146.05 0)
+			(at 138.43 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12443,7 +13315,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "efb41159-9839-4813-be32-f657baa449e6")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR018"
 			(at 166.37 97.79 0)
 			(effects
 				(font
@@ -12493,7 +13365,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR030")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -12645,7 +13517,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f1adbf11-5925-4b08-8bdc-b3d3c7e53340")
-		(property "Reference" "C12"
+		(property "Reference" "C23"
 			(at 78.486 155.194 0)
 			(effects
 				(font
@@ -12697,7 +13569,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C12")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -12712,7 +13584,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f317bec6-c478-49a3-b3e9-11f05d03b600")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR021"
 			(at 30.48 121.92 0)
 			(effects
 				(font
@@ -12762,7 +13634,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR022")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -12777,7 +13649,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f49cf14b-72a3-4e66-b2f1-a5bdf88aa8d4")
-		(property "Reference" "R3"
+		(property "Reference" "R8"
 			(at 38.1 155.702 0)
 			(effects
 				(font
@@ -12831,7 +13703,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "R3")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -12916,7 +13788,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f945ddff-4fa0-49f7-abdc-7346441efa8b")
-		(property "Reference" "R2"
+		(property "Reference" "R7"
 			(at 22.606 151.13 0)
 			(effects
 				(font
@@ -12970,7 +13842,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "R2")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -12985,7 +13857,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f9d29565-7b94-4dca-9bed-72390dd7b7b3")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR033"
 			(at 121.92 153.67 0)
 			(effects
 				(font
@@ -13035,7 +13907,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR018")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -13051,7 +13923,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fb34b513-0d4f-4a1a-8d90-66eb30f3f341")
-		(property "Reference" "J1"
+		(property "Reference" "J2"
 			(at 30.48 22.86 0)
 			(effects
 				(font
@@ -13103,7 +13975,7 @@
 		(instances
 			(project ""
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "J1")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -13118,7 +13990,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fb451568-6473-4551-962a-839c4a14b6f4")
-		(property "Reference" "C18"
+		(property "Reference" "C16"
 			(at 91.44 113.03 0)
 			(effects
 				(font
@@ -13170,7 +14042,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "C18")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -13185,7 +14057,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fc561020-3c42-4638-b65f-5d6a37eaf09b")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR031"
 			(at 106.68 153.67 0)
 			(effects
 				(font
@@ -13235,7 +14107,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR016")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -13250,7 +14122,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fe8b3d8a-ca41-4c12-b661-af0118b7f0ef")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR037"
 			(at 36.83 168.91 0)
 			(effects
 				(font
@@ -13300,7 +14172,7 @@
 		(instances
 			(project "Capacitor-Clock-PCB"
 				(path "/322dbd86-32cc-4841-b3e4-147471d65037"
-					(reference "#PWR010")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
