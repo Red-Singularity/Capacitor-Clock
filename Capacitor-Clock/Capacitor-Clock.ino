@@ -56,6 +56,7 @@ void setup() {
   lcd.setCursor(0,1);
   lcd.print("  By Mal & Dustin");
   delay(2000);
+  displayFormat(); // display the main format to the display
 
 }
 
@@ -70,11 +71,8 @@ void loop() {
   int Second = myRTC.getSecond();
 
 
-  displayFormat(); // display the main format to the display
   displayDate(Month, Day, Year);
   displayTime(Hour, Minute, Second);
-
-  delay(100);
 
 
 
