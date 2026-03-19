@@ -33,13 +33,13 @@ void setup() {
 
   myRTC.setClockMode(h12Flag); // uploads 'true' (1) to bit 6 of register 0x02
   // set default date to 1/1/2026
-  myRTC.setYear(26); // uploads 26 to register 0x06 for year
-  myRTC.setMonth(1); // uploads 1 to register 0x05 for month
-  myRTC.setDate(1); // uploads 1 to register 0x04 for day
+  //myRTC.setYear(26); // uploads 26 to register 0x06 for year
+  //myRTC.setMonth(1); // uploads 1 to register 0x05 for month
+  //myRTC.setDate(1); // uploads 1 to register 0x04 for day
   //set default time to midnight
-  myRTC.setSecond(0); // uploads 0 to register 0x00
-  myRTC.setMinute(0); // uploads 0 to register 0x01
-  myRTC.setHour(24); // uploads 24 to register 0x02
+  //myRTC.setSecond(0); // uploads 0 to register 0x00
+  //myRTC.setMinute(0); // uploads 0 to register 0x01
+  //myRTC.setHour(24); // uploads 24 to register 0x02
 
   //stepper setup
   myStepper.setMaxSpeed(1000.0);
