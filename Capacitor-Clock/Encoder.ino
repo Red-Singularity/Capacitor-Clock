@@ -37,7 +37,7 @@ int encoder_count(int max){ // uses encoder to adjust between 0 and max number p
     settings_time = millis(); // reset settings menu timer
     settings_time_old = millis();
 
-    Serial.print("counter; ");
+    //Serial.print("counter; ");
     Serial.print(counter);
 
     if(pos > newPos){

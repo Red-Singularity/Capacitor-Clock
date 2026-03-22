@@ -38,9 +38,18 @@ enum encoder{clockwise, counter_clockwise, nothing};  // clock wise is interpret
 bool century = false;
 bool h12Flag = true;
 bool pmFlag = false;
-byte alarmDay, alarmHour, alarmMinute, alarmSecond, alarmBits;
-bool alarmDy, alarmH12Flag, alarmPmFlag;
+byte alarmDay; // 1-7 if day of week, 1-31 if date in month
+byte alarmHour; // 1-12 if 12-hour mode, 0-23 if 24-hour mode
+byte alarmMinute; // 00 - 59
+byte alarmSecond; // 00 - 59
+byte alarmBits = 0b00001000; // a bitfield used to determine frequency of alarm 0b00001000 is alarm 1 every day
+bool alarmDy = true; // (true) if alarmDay is a day of the week, (false) if date in month
+bool alarmH12Flag = true; // use 12 hour time mode for alarm
+bool alarmPmFlag = true; // determines that 12 means noon
+
+
 int menu_location = 0; // total different adjustable fields for clock display
+int menu_location_old = 0;
 
 const int stepsPerRevolution = 2048;
 unsigned long settings_time = 0;
@@ -100,7 +109,7 @@ void loop() {
   static int settings; // create settings flag
 
   bool CenturyBit; // this bit is required as an input to the month function and cannot be input as a true or false to the function directly
-  int Year = 2000 + myRTC.getYear();
+  int Year = myRTC.getYear();
   int Month = myRTC.getMonth(CenturyBit);
   int Day = myRTC.getDate();
   int Hour = myRTC.getHour(h12Flag, pmFlag);
@@ -108,8 +117,15 @@ void loop() {
   int Second = myRTC.getSecond();
   int Encoder_button = digitalRead(SW);
 
+  bool Alarm_Button = digitalRead(Button_1);
+
+  if(Alarm_Button == 1){
+    alarm_functions();
+  }
+
+  displayTime();
+  displayAlarm();
   displayDate(Month, Day, Year);
-  displayTime(Hour, Minute, Second);
 
   if(Encoder_button == 0){
       settings_time = millis(); // if entering function due to button reset settings time
@@ -154,45 +170,187 @@ void menu_adjust(){
 
   if(rotation == clockwise){
     menu_location = menu_location+1;
-    if(menu_location > 10){menu_location = 0;} // total of 11 menu locations
+    if(menu_location > 8){menu_location = 0;} // total of 11 menu locations
   }
 
   else if(rotation == counter_clockwise){
     menu_location = menu_location-1;
-    if(menu_location < 0){menu_location = 10;}
+    if(menu_location < 0){menu_location = 8;}
   }
 
-  Serial.print("  menu location=");
-  Serial.print(menu_location);
-  Serial.print("  select=");
-  Serial.print(select);
+  //Serial.print("  menu location=");
+  //Serial.print(menu_location);
+  //Serial.print("  select=");
+  //Serial.print(select);
 
   // adjust time in hours on the main clock
   if(menu_location == 0 && select == 1){
-    int hour = encoder_count(24); // use encoder to select number between 1 and 12
+    int hour = encoder_count(24); // use encoder to select number between 1 and 24
     myRTC.setHour(hour); // adjust hour register in RTC
-    int minute = myRTC.getMinute();
-    int second = myRTC.getSecond();
-    displayTime(hour, minute, second); // call display time function again to update display
+    displayTime(); // call display time function again to update display
   }
 
 
   // adjust time in minutes on main clock
-  if(menu_location == 1 && select == 1){
+  else if(menu_location == 1 && select == 1){
     int minute = encoder_count(60); // use encoder to select number between 1 and 60
     myRTC.setMinute(minute); // adjust hour register in RTC
-    int hour = myRTC.getHour(h12Flag, pmFlag);
-    int second = myRTC.getSecond();
-    displayTime(hour, minute, second); // call display time function again to update display
+    myRTC.setSecond(0); // when adjusting time in minutes set seconds to 0
+    displayTime(); // call display time function again to update display
+  }
+
+  //adjust alarm in hours
+  else if(menu_location == 2 && select == 1){
+    byte A1Day, A1Hour, A1Minute, A1Second, AlarmBits;
+    bool A1Dy, A1h12, A1PM;
+    myRTC.getA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM);  // get all alarm 1 values
+    A1Hour = encoder_count(24); // use encoder to select number between 1 and 12
+    //Serial.print("  A1hour=");
+    //Serial.print(A1Hour);
+    if(A1Hour > 12){
+      A1Hour = A1Hour-12; // bring back down to 12 hour format
+      A1PM = true; //set PM flag
+    }
+    else{
+      A1PM= false;
+    }
+    myRTC.setA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM); // set all alarm 1 values
+
+    displayAlarm();
+  }
+
+  else if(menu_location == 3 && select == 1){
+    byte A1Day, A1Hour, A1Minute, A1Second, AlarmBits;
+    bool A1Dy, A1h12, A1PM;
+    myRTC.getA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM);  // get all alarm 1 values
+    A1Minute = encoder_count(60); // use encoder to select number between 1 and 60
+    myRTC.setA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM); // set all alarm 1 values
+    displayAlarm();
+  }
+
+  //adjust alarm in minutes
+  else if(menu_location == 3 && select == 1){
+
+  }
+
+  //adjust month
+  else if(menu_location == 6 && select == 1){
+    int month = encoder_count(12);
+    myRTC.setMonth(month);
+    int day = myRTC.getDate();
+    int year = myRTC.getYear();
+    displayDate(month, day, year);
+  }
+
+  //adjust day
+  else if(menu_location == 7 && select == 1){
+    bool CenturyBit; // this bit is required as an input to the month function and cannot be input as a true or false to the function directly
+    int month = myRTC.getMonth(CenturyBit);
+    int day = encoder_count(31);
+    myRTC.setDate(day);
+    int year = myRTC.getYear();
+    displayDate(month, day, year);
+  }
+
+  //adjust year
+  else if(menu_location == 8 && select == 1){
+    bool CenturyBit; // this bit is required as an input to the month function and cannot be input as a true or false to the function directly
+    int month = myRTC.getMonth(CenturyBit);
+    int day = myRTC.getDate();
+    int year = encoder_count(99);
+    myRTC.setYear(year);
+    displayDate(month, day, year);
   }
 
 
-  if(((int(millis()/500))%2==0) && (settings_time < 4900)){ //blink cursor every half second
-    lcd.print("|");
+
+
+
+
+
+  //display on screen what setting is being adjusted by row
+  Serial.print("  menu_location = ");
+  Serial.print(menu_location);
+  Serial.print("  menu_location old=");
+  Serial.print(menu_location_old);
+
+  if(menu_location < 2){
+    if(menu_location != menu_location_old){
+      lcd.setCursor(19,1); // ensure previous menu lcoations are erased if on different row
+      lcd.print(" ");
+      lcd.setCursor(19,2);
+      lcd.print(" ");
+      lcd.setCursor(39,1);
+      lcd.print(" ");
+      lcd.setCursor(19,0); // // set new location to display menu location
+    }
+
+    lcd.setCursor(19,0); // set new location to display menu location
+  }
+
+  else if(menu_location < 4){
+    if(menu_location != menu_location_old){
+      lcd.setCursor(19,0); // ensure previous menu lcoations are erased if on different row
+      lcd.print(" ");
+      lcd.setCursor(19,2);
+      lcd.print(" ");
+      lcd.setCursor(39,1);
+      lcd.print(" ");
+    }
+
+    lcd.setCursor(19,1); // set new location to display menu location
+  }
+
+  else if(menu_location < 6){
+    if(menu_location != menu_location_old){
+      lcd.setCursor(19,0); // ensure previous menu lcoations are erased if on different row
+      lcd.print(" ");
+      lcd.setCursor(19,1);
+      lcd.print(" ");
+      lcd.setCursor(39,1);
+      lcd.print(" ");
+    }
+
+    lcd.setCursor(19,2); // set new location to display menu location
+  }
+
+  else{
+    if(menu_location != menu_location_old){
+      lcd.setCursor(19,0); // ensure previous menu lcoations are erased if on different row
+      lcd.print(" ");
+      lcd.setCursor(19,1);
+      lcd.print(" ");
+      lcd.setCursor(19,2);
+      lcd.print(" ");
+    }
+
+    lcd.setCursor(39,1); // set new location to display menu location
+  }
+
+  menu_location_old = menu_location; // update menu location old
+
+  if(settings_time < 4900){ //blink cursor every half second // add this to function to blink (int(millis()/500))%2==0) && 
+    lcd.print(menu_location);
   }
   else{
-    lcd.print(" ");
+    lcd.print(" "); // always leave space blank before menu adjust function stops being called
   }
 
-  // due to the display being strange the 4th row is an extension of the 2nd starting at 20
+}
+
+void alarm_functions(){
+  static bool alarm_status;
+  bool alarm_button; // alarm button state
+  static int debounce_time;
+  //byte Alarm = 
+
+  alarm_button = digitalRead(Button_1);
+
+  alarm_status = myRTC.checkAlarmEnabled(1); // check alarm 1 status;
+
+  // enable alarm if not already enabled
+
+  // disable alarm if enabled
+
+
 }
