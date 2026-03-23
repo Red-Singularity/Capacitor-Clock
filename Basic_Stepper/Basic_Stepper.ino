@@ -14,7 +14,7 @@ void setup() {
 }
 
 void loop() {
-  myStepper.setSpeed(10);
+  myStepper.setSpeed(1);
   myStepper.step(stepsPerRevolution);
 
 }

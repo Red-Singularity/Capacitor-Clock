@@ -4,7 +4,7 @@
 // to explode a small capacitor when the set time has been reached
 
 #include <LiquidCrystal_I2C.h> // include I2C library
-#include <AccelStepper.h> // using accel stepper library for motor positioning
+#include <Stepper.h> // basic stepper library
 #include <DS3231.h> // include library for RTC module
 #include <Wire.h>
 #include <RotaryEncoder.h> // include library for rotary encoder
@@ -23,9 +23,11 @@
 #define DT 16 // encoder DT input
 #define CLK 4 // encoder clock input
 
+const int stepsPerRevolution = 2048; // Defines the number of steps per rotation
+
 // Creates an instance of stepper class
 // Pins entered in sequence IN1-IN3-IN2-IN4 for proper step sequence
-AccelStepper myStepper(MotorInterfaceType, Step1, Step3, Step2, Step4);
+Stepper myStepper = Stepper(stepsPerRevolution, Step1, Step3, Step2, Step4);
 
 LiquidCrystal_I2C lcd(0x27,20,2);  // set the LCD address to 0x27 for a 16 chars and 2 line display
 
@@ -46,12 +48,13 @@ byte alarmBits = 0b00001000; // a bitfield used to determine frequency of alarm 
 bool alarmDy = true; // (true) if alarmDay is a day of the week, (false) if date in month
 bool alarmH12Flag = true; // use 12 hour time mode for alarm
 bool alarmPmFlag = true; // determines that 12 means noon
+bool alarmMain = false; // main alarm flag. only is true when alarm went off
+bool alarm_status;
 
 
 int menu_location = 0; // total different adjustable fields for clock display
 int menu_location_old = 0;
 
-const int stepsPerRevolution = 2048;
 unsigned long settings_time = 0;
 unsigned long settings_time_old = 0;
 
@@ -85,14 +88,8 @@ void setup() {
   //myRTC.setMinute(0); // uploads 0 to register 0x01
   //myRTC.setHour(24); // uploads 24 to register 0x02
 
-  //stepper setup
-  myStepper.setMaxSpeed(1000.0);
-  myStepper.setAcceleration(50.0);
-  myStepper.setSpeed(200);
-  myStepper.moveTo(2048);
-
   // LCD setup
-  lcd.init(); // initialize the lcd 
+  lcd.begin(); // initialize the lcd 
   // Print a message to the LCD.
   lcd.backlight();
   lcd.setCursor(2,0);
@@ -119,9 +116,8 @@ void loop() {
 
   bool Alarm_Button = digitalRead(Button_1);
 
-  if(Alarm_Button == 1){
-    alarm_functions();
-  }
+  alarm_functions();
+  stepperMove();
 
   displayTime();
   displayAlarm();
@@ -135,8 +131,8 @@ void loop() {
 
   if(settings == 1){ // Encoder button was pressed. Enter setting adjustment mode
     settings_time = settings_time - settings_time_old; // read how long its been since an input
-    Serial.print("  settings time; ");
-    Serial.print(settings_time);
+    //Serial.print("  settings time; ");
+    //Serial.print(settings_time);
     if(settings_time > 5000){ // cut menu adjust out of loop if its been too long since input
       settings = 0;
       // also clear cursor here later
@@ -148,7 +144,7 @@ void loop() {
     settings_time = millis();
   }
 
-  Serial.println(); // print new line
+  //Serial.println(); // print new line
 }
 
 
@@ -201,9 +197,9 @@ void menu_adjust(){
 
   //adjust alarm in hours
   else if(menu_location == 2 && select == 1){
-    byte A1Day, A1Hour, A1Minute, A1Second, AlarmBits;
+    byte A1Day, A1Hour, A1Minute, A1Second;
     bool A1Dy, A1h12, A1PM;
-    myRTC.getA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM);  // get all alarm 1 values
+    myRTC.getA1Time(A1Day, A1Hour, A1Minute, A1Second, alarmBits, A1Dy, A1h12, A1PM);  // get all alarm 1 values
     A1Hour = encoder_count(24); // use encoder to select number between 1 and 12
     //Serial.print("  A1hour=");
     //Serial.print(A1Hour);
@@ -214,17 +210,21 @@ void menu_adjust(){
     else{
       A1PM= false;
     }
-    myRTC.setA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM); // set all alarm 1 values
+    A1Second = 0; // ensure seconds for alarm is set to 0
+    alarmBits = 0b00001000;// ensure alarm bits is set properly
+    myRTC.setA1Time(A1Day, A1Hour, A1Minute, A1Second, alarmBits, A1Dy, A1h12, A1PM); // set all alarm 1 values
 
     displayAlarm();
   }
 
   else if(menu_location == 3 && select == 1){
-    byte A1Day, A1Hour, A1Minute, A1Second, AlarmBits;
+    byte A1Day, A1Hour, A1Minute, A1Second;
     bool A1Dy, A1h12, A1PM;
-    myRTC.getA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM);  // get all alarm 1 values
+    myRTC.getA1Time(A1Day, A1Hour, A1Minute, A1Second, alarmBits, A1Dy, A1h12, A1PM);  // get all alarm 1 values
+    A1Second = 0; // ensure alarm seconds is set to 0
     A1Minute = encoder_count(60); // use encoder to select number between 1 and 60
-    myRTC.setA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM); // set all alarm 1 values
+    alarmBits = 0b00001000;// ensure alarm bits is set properly
+    myRTC.setA1Time(A1Day, A1Hour, A1Minute, A1Second, alarmBits, A1Dy, A1h12, A1PM); // set all alarm 1 values
     displayAlarm();
   }
 
@@ -269,10 +269,10 @@ void menu_adjust(){
 
 
   //display on screen what setting is being adjusted by row
-  Serial.print("  menu_location = ");
-  Serial.print(menu_location);
-  Serial.print("  menu_location old=");
-  Serial.print(menu_location_old);
+  //Serial.print("  menu_location = ");
+  //Serial.print(menu_location);
+  //Serial.print("  menu_location old=");
+  //Serial.print(menu_location_old);
 
   if(menu_location < 2){
     if(menu_location != menu_location_old){
@@ -339,18 +339,49 @@ void menu_adjust(){
 }
 
 void alarm_functions(){
-  static bool alarm_status;
+  static bool alarm_button_old;
   bool alarm_button; // alarm button state
-  static int debounce_time;
-  //byte Alarm = 
+  static bool button_switch;
 
   alarm_button = digitalRead(Button_1);
+  //Serial.print("  alarm_button=");
+  //Serial.print(alarm_button);
+  if(alarm_button != alarm_button_old){ // check if button changed state
+    alarm_button_old = alarm_button; // update value of alarm button old
+    if(alarm_button == 1){ // only do something on rising edge
+      //Serial.print("  set button switch");
+      button_switch = 1; // toggle button switch when a state change has been seen
+    }
+  }
 
+  //check alarm status
   alarm_status = myRTC.checkAlarmEnabled(1); // check alarm 1 status;
+  //Serial.print("  alarm status=");
+  //Serial.print(alarm_status);
 
-  // enable alarm if not already enabled
+  // enable alarm
+  if(alarm_status == 0 && button_switch == 1){
+    myRTC.turnOnAlarm(1); // enable alarm 1
+  }
 
-  // disable alarm if enabled
+  // disable alarm
+  if(alarm_status == 1 && button_switch == 1){
+    myRTC.turnOffAlarm(1); // disable alarm 1
+    if(alarmMain == 1){
+      displayFormatAlarm(); // call display format to ensure alarm display goes back to normal
+      alarmMain = 0; // disable alarm flag
+    }
+  }
 
+  //poll alarm and set global variable if it goes off
+  myRTC.checkIfAlarm(2); // ensure alarm 2 is still checked and reset to 0 to avoid glitches
+  if(myRTC.checkIfAlarm(1) == true){
+    alarmMain = 1;
+  }
 
+  //Serial.print(" alarm status=");
+  //Serial.print(alarm_status);
+  //Serial.print("  Alarm=");
+  //Serial.print(alarmMain);
+  button_switch = 0;
 }

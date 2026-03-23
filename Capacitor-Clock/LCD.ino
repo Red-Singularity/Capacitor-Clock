@@ -12,6 +12,11 @@ void displayFormat(){
   lcd.print("Date:   /  /    ");
 }
 
+void displayFormatAlarm(){
+  lcd.setCursor(0,1);
+  lcd.print("Alarm:   :      ");
+}
+
 void displayTime(){
   int hour = myRTC.getHour(h12Flag, pmFlag);
   int minute = myRTC.getMinute();
@@ -23,7 +28,6 @@ void displayTime(){
   String hour_s = String(hour); // cast integers to strings
   String minute_s = String(minute);
   String second_s = String(second);
-
 
   if(hour != hourOld){ // check to see if value updated to only update display when necessarry
   hourOld = hour;
@@ -84,9 +88,10 @@ void displayAlarm(){
   //* Retrieves values from the Alarm 1 time registers then stores the values
   //* in the external variables passed to the parameter list.
   //* NOTE: previous values of the parameter variables are over-written.
-  byte A1Day, A1Hour, A1Minute, A1Second, AlarmBits;
+  byte A1Day, A1Hour, A1Minute, A1Second;
   bool A1Dy, A1h12, A1PM;
-  myRTC.getA1Time(A1Day, A1Hour, A1Minute, A1Second, AlarmBits, A1Dy, A1h12, A1PM);
+  bool alarm_status;
+  myRTC.getA1Time(A1Day, A1Hour, A1Minute, A1Second, alarmBits, A1Dy, A1h12, A1PM);
 
 
   //int hour = A1Hour;
@@ -97,43 +102,59 @@ void displayAlarm(){
   String hour_s = String(A1Hour); // cast integers to strings
   String minute_s = String(A1Minute);
 
-
-  if(A1Hour != hourOld){ // check to see if value updated to only update display when necessarry
-  hourOld = A1Hour;
-    if(A1Hour>9){ // if value is greater than 9 the formatting doesnt need adjustment
-      lcd.setCursor(7,1);
-      lcd.print(hour_s);
+  if(alarmMain == 0){ // display normal alarm time if alarm isnt actively going off
+    if(A1Hour != hourOld){ // check to see if value updated to only update display when necessarry
+    hourOld = A1Hour;
+      if(A1Hour>9){ // if value is greater than 9 the formatting doesnt need adjustment
+        lcd.setCursor(7,1);
+        lcd.print(hour_s);
+      }
+      else{ // sets formating properly 
+        lcd.setCursor(7,1);
+        lcd.print("0"); // puts leading 0
+        lcd.setCursor(8,1);
+        lcd.print(hour_s);
+      }
     }
-    else{ // sets formating properly 
-      lcd.setCursor(7,1);
-      lcd.print("0"); // puts leading 0
-      lcd.setCursor(8,1);
-      lcd.print(hour_s);
+
+
+    if(A1Minute != minuteOld){ // check to see if value updated to only update display when necessarry
+    minuteOld = A1Minute;
+      if(A1Minute>9){ // if value is greater than 9 the formatting doesnt need adjustment
+        lcd.setCursor(10,1);
+        lcd.print(minute_s);
+      }
+      else{ // sets formating properly 
+        lcd.setCursor(10,1);
+        lcd.print("0"); // puts leading 0
+        lcd.setCursor(11,1);
+        lcd.print(minute_s);
+      }
+    }
+
+    lcd.setCursor(13,1);
+    if(A1PM == true){
+      lcd.print("PM");
+    }
+    else{
+      lcd.print("AM");
     }
   }
 
-
-  if(A1Minute != minuteOld){ // check to see if value updated to only update display when necessarry
-  minuteOld = A1Minute;
-    if(A1Minute>9){ // if value is greater than 9 the formatting doesnt need adjustment
-      lcd.setCursor(10,1);
-      lcd.print(minute_s);
-    }
-    else{ // sets formating properly 
-      lcd.setCursor(10,1);
-      lcd.print("0"); // puts leading 0
-      lcd.setCursor(11,1);
-      lcd.print(minute_s);
-    }
+  else{
+    lcd.setCursor(7,1);
+    lcd.print("WAKE UP!");
+    hourOld = 0;
+    minuteOld = 0;
   }
 
-  lcd.setCursor(13,1);
-
-  if(A1PM == true){
-    lcd.print("PM");
+  lcd.setCursor(16,1);
+  alarm_status = myRTC.checkAlarmEnabled(1); // check alarm 1 status;
+  if(alarm_status == 0){
+    lcd.print("  ");
   }
   else{
-    lcd.print("AM");
+    lcd.print("EN");
   }
 }
 
